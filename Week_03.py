@@ -50,8 +50,8 @@ result = print(
 )
 
 ## Tuesday ##
-
 # If statements
+
 # using an if statement to only run code if the condition is met
 x, y = 5, 10
 if x < y:
@@ -178,4 +178,47 @@ if x > y:
 elif x < y:
     print("lower")
 
-# 3.
+## Thursday ##
+# Else statements
+
+# It always needs to be associated with an if statement
+# The Else Statement covers All others possibilities
+
+name = "Jhon"
+if name == "Jacob":
+    print("Your name is Jacob")
+else:
+    print("Hello {} !".format(name))
+
+
+name = "Mattia"
+if name[0] == "A":
+    print("Your name starts with 'A'")
+elif name[0] == "B":
+    print("Your name starts with 'B'")
+elif name[0] == "J":
+    print("Your name starts with 'J'")
+else:
+    print("Your name starts with {} !".format(name[0]))
+
+## Thursday exercise
+# 1. Fix the errors --> Output "Hello John"
+
+name = "John"
+if name == "Jack":
+    print("Hello Jack")
+else:
+    print("Hello John")
+
+# 2. User Input --> Ask the user the military time and
+# base on it, return "Good Morning", ... , ...
+
+time = int(input("What time is it?"))
+if time < 1200:
+    print("Good morning")
+elif time >= 1200 and time < 1700:
+    print("Good afternoon")
+elif time >= 1700:
+    print("Good evening")
+else:
+    print("I don't know")

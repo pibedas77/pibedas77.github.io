@@ -222,3 +222,54 @@ elif time >= 1700:
     print("Good evening")
 else:
     print("I don't know")
+
+## Friday ##
+# Creating a calculator
+
+# 1. Ask the user for the calculation they would like to perfermo
+operation = input("What would you like to do: add/subtract/multiply/divide? ").lower()
+
+# 2. ask for numbers
+if operation == "subtract" or operation == "divide":
+    print("You chose {}".format(operation))
+    print("Please, keep in mind that the order of you number metter...")
+num1 = input("What is your first number?")
+num2 = input("What is your second numebr?")
+print("First number {}; Second number {}".format(num1, num2))
+
+# 3. Set Up Try and Except
+try:
+    num1, num2 = float(num1), float(num2)
+    if operation == "add":
+        result = num1 + num2
+        print("{} + {} = {}".format(num1, num2, result))
+    elif operation == "multiply":
+        result = num1 * num2
+        print("{} * {} = {}".format(num1, num2, result))
+    elif operation == "subtract":
+        result = num1 - num2
+        print("{} - {} = {}".format(num1, num2, result))
+    elif operation == "divide":
+        result = num1 / num2
+        print("{} / {} = {}".format(num1, num2, result))
+    else:
+        print("Sorry but {} is not an option".format(operation))
+except:
+    print("Improper numbers used. Please try againg")
+
+# Weekly Challenge
+# 2. Age Group
+age = input("What is you age")
+age = int(age)
+if age > 0 and age <= 12:
+    print("Kid")
+elif age > 12 and age <= 19:
+    print("Teenager")
+elif age > 19 and age <= 30:
+    print("Young adult")
+elif age > 30 and age <= 64:
+    print("Adult")
+elif age > 64:
+    print("Senior")
+else:
+    print("Sorry, i couldn't get it")

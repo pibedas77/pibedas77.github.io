@@ -74,3 +74,58 @@ print(
 )
 
 # Tuesday: For Loops
+# Loops are usefull to rerun the same lines of code several times.
+# Lopps will always run untill a condition is met
+
+for num in range(5):
+    print("Value: {}".format(num))
+# ! Range() function allows to count from one number to another.
+# With in the function we are also able to define where to start and end and how much we increment or decrement
+
+for num in range(2, 10, 2):
+    print("Value: {}".format(num))
+
+# Looping by element
+# When working with data types that are iterable, we can use them in a for loop
+
+name = "Mattia Pivetta"
+for letter in name:
+    print("Value: {}".format(letter))
+
+# Continue statement
+# Once a continue statement is hit, the current iteration stops and goes back to the top loop
+
+for num in range(5):
+    if num == 3:
+        continue  # when num == 3, stop current iteratione and go back to the looping
+    print(num)
+
+
+# Break statement
+# This is one of the most important statements. It allows us to break out of a loop at any point in time.
+# This is usefull for stopping a loop when a condition is met
+for num in range(5):
+    if num == 3:
+        break
+    print("Value: {}".format(num))
+
+# Pass statement
+# Pass is a just a placeholder so that the program doesn't break
+for i in range(5):
+    # TO-DO: Add code to print
+    pass
+
+# Tuesday exercises
+# 1. Divisible by Three
+for i in range(3, 100, 3):
+    print("Value: {}".format(i))
+
+# 2. Only Vowels
+ans = input("Write a word")
+for i in ans:
+    if i == "a" or i == "e" or i == "i" or i == "o" or i == "u":
+        print(i)
+
+ans = input("Write a word")
+for ans in ("a", "e", "i", "o", "u"):
+    print(ans)

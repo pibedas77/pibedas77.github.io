@@ -157,3 +157,16 @@ while not game_over:
             game_over = True
             break
 
+# Thursday: working with lists
+nums = [5, 10, 15]
+length = len(nums)
+print(length)
+print(nums[1:3])
+print(nums[:2])
+print(nums[::2])
+print(nums[-2:])
+
+# append()
+nums = [4, 8]
+nums.append(12)
+print(nums)

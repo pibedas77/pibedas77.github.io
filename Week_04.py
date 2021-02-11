@@ -129,3 +129,31 @@ for i in ans:
 ans = input("Write a word")
 for ans in ("a", "e", "i", "o", "u"):
     print(ans)
+
+# Wednesday: While Loops
+# While loops are generally used to loop based on a condition rather than counting
+health = 10
+while health > 0:
+    print(health)
+    health -= 1
+
+# Nested loops
+for i in range(3):
+    for j in range(4):
+        print(i, j)
+
+# Wednesday exercises
+# 1. User Input:
+ans = input("Give me a number and I'll write it. Write Quit to 'quit' the prograg")
+while ans != "quit":
+    print(ans)
+    ans = input("Give me a number and I'll write it. Write Quit to 'quit' the prograg")
+# 2. Double Loop
+game_over = False
+while not game_over:
+    for i in range(5):
+        print(i)
+        if i == 2:
+            game_over = True
+            break
+

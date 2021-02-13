@@ -166,7 +166,51 @@ print(nums[:2])
 print(nums[::2])
 print(nums[-2:])
 
-# append()
+# Adding items to a list
+# append() add a value to the back of a list
 nums = [4, 8]
 nums.append(12)
 print(nums)
+
+# insert() needs an index to insert a value to a specific location
+words = ["hello", "ciao"]
+words.insert(0, "hola")
+print(words)
+
+# Removing items
+# pop() removes the last item from a list. You can also specify an index
+# in order to remove a value from a specific position.
+# pop() also returns the value that has been deleted
+items = ["Tizio", "ciao", "Caio"]
+items.pop()
+item_removed = items.pop(0)
+print(item_removed, "\n", items)
+
+# remove()
+sports = ["baseball", "football", "soccer", "hockey"]
+try:
+    sports.remove("socc")
+    print("The item has been removed")
+except:
+    print("The item does not exit in the list")
+
+# Working with numerical list data
+num = [2, 3, 5, 10]
+print(min(num))
+print(max(num))
+print(sum(num))
+
+# Sorting a list
+# it is usefull to sort lists and there are a few methods in Python
+# sorted()
+nums = [5, 10, 0, 3]
+sorted_nums = sorted(nums)
+print(nums, "\t", sorted_nums)
+
+# sort() will change the original list directly
+nums = [5, 10, 0, 3]
+print(nums)
+nums.sort()
+print(nums)
+
+# Conditionals and lists

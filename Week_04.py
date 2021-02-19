@@ -214,3 +214,28 @@ nums.sort()
 print(nums)
 
 # Conditionals and lists
+names = ["Jack", "Robert", "Mary"]
+if "Mary" in names:
+    print("found")
+if "Jimmy" not in names:
+    print("not found")
+
+# Checking an empty list
+nums = []
+if not nums:  # we can also write "if nums == []"
+    print("empty")
+
+# Checking a not empty list
+nums = [1, 2, 3]
+if nums:
+    print("not empty")
+
+# It is possible to use both loops to iterate a list
+sports = ["baseball", "football", "soccer", "hockey"]
+for sport in sports:  # NOTE sport is a temporary variable
+    print(sport)
+
+names = ["Bob", "Jack", "Robert", "Mary", "Bob", "Ervin"]
+while "Bob" in names:
+    names.remove("Bob")
+print(names)

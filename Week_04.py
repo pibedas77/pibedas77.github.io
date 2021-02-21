@@ -239,3 +239,26 @@ names = ["Bob", "Jack", "Robert", "Mary", "Bob", "Ervin"]
 while "Bob" in names:
     names.remove("Bob")
 print(names)
+
+
+# Thursday Exercise
+# 1. Remove duplicates using the count() method
+names = ["Bob", "Kenny", "Amanda", "Bob", "Kenny"]
+for i in names:
+    if names.count(i) > 1:
+        names.remove(i)
+print(names)
+
+
+# 2. User input: use a while loop tp continually ask the user to input a word until they type "quit"
+lst = []
+ans = ""
+while ans != "quit":
+    ans = input("Write a string")
+    if ans != "quit":
+        lst.append(ans)
+        # print(lst)
+for l in lst:
+    print(l)
+
+# Friday: Creating Hangman

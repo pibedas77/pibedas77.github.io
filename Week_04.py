@@ -261,4 +261,83 @@ while ans != "quit":
 for l in lst:
     print(l)
 
-# Friday: Creating Hangman
+## Friday: Creating Hangman
+# Adding imports
+from random import choice
+from IPython.display import clear_output
+
+# declare variables
+words = ["tree", "basket", "chair", "paper", "python"]
+word = choice(words)
+guessed, lives, game_over = [], 7, False
+
+guesses = ["_ "] * len(word)
+
+# creating main loop
+while not game_over:
+    hidden_word = "".join(guesses)
+    print("Your guessed word: {}".format(guessed))
+    print("Word to guess {}".format(hidden_word))
+    print("Lives : {}".format(lives))
+    #    print(word)
+    #    print("".join(guesses))
+    ans = input("Type quit or guess a letter: ").lower()
+    clear_output()
+    if ans == "quit":
+        print("Thanks for playing. ")
+        game_over = True
+    elif word == "".join(guesses):
+        print("Congrats, you have guessed correctly!")
+        game_over = True
+    elif ans in word and ans not in guessed:
+        print("You've gueesed correctly!")
+        for i in range(len(word)):
+            if word[i] == ans:
+                guesses[i] = ans
+    elif ans in guessed:
+        print("You've already guessed that. Try agin.")
+    else:
+        lives -= 1
+        print("Incorrect. You have lost a life.")
+        if ans not in guessed:
+            guessed.append(ans)
+        if lives <= 0:
+            print("You have lost all you lives. Game over!")
+            game_over = True
+
+
+## Weekly challenges
+# 1. Piramids
+
+ans = input("insert a number...")
+end = int(ans)
+start = int(1)
+for i in range(start, end):
+    print(" " * end, "x" * start, "x" * start, sep="")
+    end = end - 1
+    start = start + 1
+
+end = input("insert a number...")
+end = int(end)
+start = int(1)
+for i in range(start, end):
+    print(" " * end, " x" * start)
+    end = end - 1
+    start = start + 1
+
+# 2. Output names
+
+names = ["Jhon", "    ", "Amanda", "tst"]
+vowels = "aeiou"
+for i in names:
+    for vowel in vowels:
+        if vowel in i:
+            print(i)
+        else:
+            continue
+
+# 3. Convert Celsius
+temps = [32, 12, 44, 29]
+for t in temps:
+    conversion = (9 / 5) * t + 32
+    print(conversion)

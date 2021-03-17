@@ -123,3 +123,56 @@ ans2 = input("What's your surname?")
 
 printFirstLastName(ans1, ans2)
 
+# Wednesday: return statement
+
+
+def basicCalc(num1, num2):
+    return num1 + num2
+
+
+result = basicCalc(10, 5)
+print(result)
+
+# return a collection of data
+def returnMultiple():
+    a = 10
+    b = 50
+    return (a, b)
+
+
+result = returnMultiple()
+print(result)
+
+# Ternary Operator
+def searcList(aList, el):
+    return True if el in aList else False
+
+
+result = searcList(["one", 2, "two", 5], 2)
+
+print(result)
+
+# Wednesday exercise
+# 1. Full Name:
+
+
+def fullName(in1, in2):
+    return in1 + " " + in2
+
+
+in1 = input("What is your name?")
+in2 = input("And what is you surname?")
+
+fullnm = fullName(in1, in2)
+print(fullnm)
+
+# 2. User Input:
+
+
+def userInut():
+    return input("Write anything...")
+
+
+result = userInut()
+
+print(result)

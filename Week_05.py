@@ -251,3 +251,90 @@ ans1 = input("Tell me a name")
 ans2 = int(input("Tell me a position number"))
 chageValue(names, ans1, ans2)
 
+# Friday Project: creating a shopping chart
+
+from IPython.display import clear_output
+
+# global varible
+cart = []
+
+# Function that adds items to the cart
+
+
+def addItem(item):
+    clear_output()
+    cart.append(item)
+    print("{} has been added to the cart".format(item))
+
+
+# Function that removes items to the cart
+
+
+def removeItem(item):
+    clear_output()
+    try:
+        item = int(item)
+        # if isinstance(item, int):
+        cart.pop(item)
+        print("Index {} has been removed from the cart.".format(item))
+    except:
+        try:
+            cart.remove(item)
+            print("{} has been removed from the cart.".format(item))
+        except:
+            print("Sorry, we could not remove that item.")
+
+
+# Function that shows items from the cart
+
+
+def showCart():
+    clear_output()
+    if cart:
+        print("Here is you cart:")
+        for item in cart:
+            index = cart.index(item)
+            #  ind = item.index(item)
+            print("{} - {}".format(index, item))
+    else:
+        print("Your cart is empty.")
+
+
+# Function that clears items from the cart
+
+
+def clearCaquitrt():
+    clear_output()
+    cart.clear()
+    print("Your cart has been cleared.")
+
+
+# Creating the main loop
+# It will loop until the user write quit
+
+
+def main():
+    done = False
+    while not done:
+        ans = input("quit/add/remove/show/clear: ").lower()
+        if ans == "quit":
+            print("Thanks for using this program!")
+            showCart()
+            done = True
+        elif ans == "add":
+            item = input("What would you like to add?").title()
+            addItem(item)
+        elif ans == "remove":
+            showCart()
+            item = input("Which item would you like to remove?").title()
+            removeItem(item)
+        elif ans == "show":
+            showCart()
+        elif ans == "clear":
+            clearCart()
+        else:
+            print("Sorry that was not an option.")
+
+
+main()
+

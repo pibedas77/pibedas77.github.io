@@ -176,3 +176,78 @@ def userInut():
 result = userInut()
 
 print(result)
+
+
+# Thursday: Scope
+
+num = 5
+
+
+# def scopeTest():
+#     num += 1
+
+scopeTest()
+
+# Handling function scope
+def scopeTest():
+    word = "Testo"
+    return word
+
+
+variable = scopeTest()
+print(variable)
+
+# In-place Algorithms
+num = 5
+
+
+def sumFive(n):
+    n += 5
+    print(num)
+
+
+def sumFiveN(n):
+    n += 5
+    print(n)
+
+
+sumFive(num)
+
+sumFiveN(num)
+
+# changing a variable by using the index within a function, will alter the value of the variable
+sports = ["football", "basketball", "golf", "cricket"]
+
+
+def change(aList):
+    aList[0] = "Soccer"
+    print(aList)
+
+
+print("Before change {}".format(sports))
+change(sports)
+print("After change {}".format(sports))
+
+
+# Thursday exercise
+# 1. Names
+names = ["Bob", "Rich", "Amanda"]
+cnt = len(names)
+print(cnt)
+
+
+def chageValue(aList, name, index):
+    cnt = len(aList)
+    if index in range(0, cnt):
+        aList[index] = name
+        print(aList)
+    else:
+        print("There are not enough elements in the list")
+
+
+print(names)
+
+ans1 = input("Tell me a name")
+ans2 = int(input("Tell me a position number"))
+chageValue(names, ans1, ans2)
+

@@ -303,7 +303,7 @@ def showCart():
 # Function that clears items from the cart
 
 
-def clearCaquitrt():
+def clearCart():
     clear_output()
     cart.clear()
     print("Your cart has been cleared.")

@@ -94,3 +94,53 @@ person["number"] = input("What is your number?")
 print("These are de details you gave...")
 for v in person.values():
     print(v)
+
+# Thursday: Reading and writing files
+# Opening/Creating and writing to a txt file
+f = open("test.txt", "w+")
+f.write("This is a test")
+f.close()
+
+# Reading from a txt file
+f = open("test.txt", "r")
+data = f.read()
+f.close()
+
+print(data)
+
+# Writing to csv file
+import csv
+
+with open("test.csv", mode="w", newline="") as f:
+    writer = csv.writer(f, delimiter=",")
+    writer.writerow(["Name", "City"])
+    writer.writerow(["Mattia", "Villorba"])
+
+# Reading from csv file
+
+with open("test.csv", mode="r") as f:
+    reader = csv.reader(f, delimiter=",")
+    for row in reader:
+        print(row)
+
+
+# Thursday exercise
+# User input
+f = open("testInput.txt", "w+")
+ans = input("What is you favourite colour?")
+f.write(ans)
+f.close()
+
+# Data dumping
+import csv
+
+data = {
+    "name": ["Dave", "Denis", "Peter", "Jess"],
+    "language": ["Python", "C", "Java", "Python"],
+}
+with open("testDataDumping.csv", mode="w") as f:
+    w = csv.writer(f, delimiter=",")
+    w.writerow(data.keys())
+    w.writerows(zip(*data.values()))
+
+f.close()

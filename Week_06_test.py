@@ -34,12 +34,35 @@ def loginUser():
     return False
 
 
+def changePassword():
+    email = input("To change password, enter you email: ").lower()
+    password = input("Now, type your old password: ")
+    clear_output
+    with open("user.csv", mode="r+", newline="") as r:
+        reader = csv.reader(r, delimiter=",")
+        for row in reader:
+            if row[0] == email and row[1] == password:
+                print("We found you in our DB")
+                newPassword = input("Type your new password: ")
+                newPassword2 = input("Re-type you new password")
+                if newPassword == newPassword2:
+                    row[1] = newPassword
+                    with open("user.csv", mode="w", newline="") as r:
+                        writer = csv.writer(r, delimiter=",")
+                        writer.writerow(row)
+                    # print(row[0], row[1])
+                    # wreader.writerows(row)
+                    return True
+    print("Something went wrong. Try again")
+    return False
+
+
 # Main loop
 active = True
 logged_in = False
 while active:
     if logged_in:
-        print("1. Logout | 2. Quit")
+        print("1. Logout | 2. Quit | 3. Change")
     else:
         print("1. Login | 2. Register | 3.Quit ")
 
@@ -55,13 +78,7 @@ while active:
     elif choice == "logout" and logged_in == True:
         logged_in = False
         print("You are now logged out.")
+    elif choice == "change" and logged_in == True:
+        changePassword()
     else:
         print("Sorry, try again later")
-
-
-import csv
-
-with open("user.csv", mode="r") as f:
-    reader = csv.reader(f, delimiter=",")
-    for row in reader:
-        print(row)
